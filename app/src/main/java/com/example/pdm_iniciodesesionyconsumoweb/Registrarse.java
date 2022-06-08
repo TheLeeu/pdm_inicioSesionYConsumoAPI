@@ -37,19 +37,26 @@ public class Registrarse extends AppCompatActivity {
             //Validar que las contrasenias sean las mismas
             if(et_c1.getText().toString().equals(et_c2.getText().toString())){
 
-                //Crear nuevo usuario
-                mAuth.createUserWithEmailAndPassword(et_email.getText().toString(),et_c1.getText().toString())
-                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
-                                    Toast.makeText(Registrarse.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-                                    finish();
-                                }else{
-                                    Toast.makeText(Registrarse.this, "Fallo al registrar", Toast.LENGTH_SHORT).show();
+                //Validar que las contrasenias tengan almenos 6 caracteres
+                if(et_c1.getText().toString().length() >= 6){
+                    //Crear nuevo usuario
+                    mAuth.createUserWithEmailAndPassword(et_email.getText().toString(),et_c1.getText().toString())
+                            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(Registrarse.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                                        finish();
+                                    }else{
+                                        Toast.makeText(Registrarse.this, "Fallo al registrar", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }else{
+                    Toast.makeText(this, "La contrasenia debe tener al menos 6 caracteres", Toast.LENGTH_LONG).show();
+                }
+
+
 
             }else{
                 Toast.makeText(this, "Las contrasenias no son iguales", Toast.LENGTH_LONG).show();
