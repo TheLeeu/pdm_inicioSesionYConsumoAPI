@@ -3,7 +3,7 @@
     package="com.example.pdm_iniciodesesionyconsumoweb">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    
+
 
     <application
         android:allowBackup="true"
