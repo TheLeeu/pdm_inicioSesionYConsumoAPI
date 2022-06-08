@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -25,6 +26,12 @@ public class Registrarse extends AppCompatActivity {
     }
 
     public void btnRegistro(View view) {
-        
+        //Validar que los campos no esten vacios
+        if(!et_email.getText().toString().isEmpty() && !et_c1.getText().toString().isEmpty()
+        && !et_c2.getText().toString().isEmpty()){
+
+        }else{
+            Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_LONG).show();
+        }
     }
 }
