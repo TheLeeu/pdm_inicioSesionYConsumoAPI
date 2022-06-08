@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "125447588655",
+    "project_id": "pdminiciosesionyconsumoweb",
+    "storage_bucket": "pdminiciosesionyconsumoweb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125447588655:android:1dac4a2bca7afad890efda",
+        "android_client_info": {
+          "package_name": "com.example.pdm_iniciodesesionyconsumoweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125447588655-oinm76l7l5k4jo5beq1el0nde1jr4lmv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pdm_iniciodesesionyconsumoweb",
+            "certificate_hash": "e49f9b26b49a526ad2890c73c088249133f6a547"
+          }
+        },
+        {
+          "client_id": "125447588655-pn42omm82vln4abuon0j26gpc5q1qu32.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvd6oaFFw2A9En4CdqmqusTjxNvHjLCeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125447588655-pn42omm82vln4abuon0j26gpc5q1qu32.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
