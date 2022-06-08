@@ -30,6 +30,12 @@ public class Registrarse extends AppCompatActivity {
         if(!et_email.getText().toString().isEmpty() && !et_c1.getText().toString().isEmpty()
         && !et_c2.getText().toString().isEmpty()){
 
+            //Validar que las contrasenias sean las mismas
+            if(et_c1.getText().toString().equals(et_c2.getText().toString())){
+
+            }else{
+                Toast.makeText(this, "Las contrasenias no son iguales", Toast.LENGTH_LONG).show();
+            }
         }else{
             Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_LONG).show();
         }
