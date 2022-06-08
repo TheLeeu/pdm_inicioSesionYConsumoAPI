@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         et_email = (EditText)  findViewById(R.id.etEmail);
         et_contrasenia = (EditText) findViewById(R.id.etContrasenia);
-        
+
     }
 
     public void btnRegistrarse(View view) {
