@@ -1,5 +1,6 @@
 package com.example.pdm_iniciodesesionyconsumoweb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Registrarse extends AppCompatActivity {
@@ -32,6 +36,20 @@ public class Registrarse extends AppCompatActivity {
 
             //Validar que las contrasenias sean las mismas
             if(et_c1.getText().toString().equals(et_c2.getText().toString())){
+
+                //Crear nuevo usuario
+                mAuth.createUserWithEmailAndPassword(et_email.getText().toString(),et_c1.getText().toString())
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(Registrarse.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }else{
+                                    Toast.makeText(Registrarse.this, "Fallo al registrar", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
 
             }else{
                 Toast.makeText(this, "Las contrasenias no son iguales", Toast.LENGTH_LONG).show();
