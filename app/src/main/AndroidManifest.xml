@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pdm_inicioDeSesionYConsumoWeb">
         <activity
+            android:name=".Catalogo"
+            android:exported="false" />
+        <activity
             android:name=".Registrarse"
             android:exported="false" />
         <activity

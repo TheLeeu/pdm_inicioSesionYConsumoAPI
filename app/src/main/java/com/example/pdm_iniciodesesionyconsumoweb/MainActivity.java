@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Toast.makeText(this, "Sesion esta iniciada", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(this, Catalogo.class);
+            startActivity(i);
         }
     }
 
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(MainActivity.this, "Iniciando sesion", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getApplicationContext(), Catalogo.class);
+                                startActivity(i);
                             }else{
                                 Toast.makeText(MainActivity.this, "Fallo al iniciar sesion", Toast.LENGTH_SHORT).show();
                                 et_email.setText("");
